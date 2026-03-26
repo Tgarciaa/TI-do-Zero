@@ -1,6 +1,260 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  href=<script type="text/javascript">
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvende o Mundo da TI com o Ebook "TI do Zero"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2a2a72; /* Um azul mais escuro e profissional */
+            --secondary-color: #009ffd; /* Um azul mais claro para destaque */
+            --text-color: #333;
+            --light-text-color: #f4f4f4;
+            --background-light: #f9f9f9;
+            --background-dark: #1c1c4e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 10s infinite alternate;
+            opacity: 0.3;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffda47; /* Amarelo chamativo */
+            color: var(--primary-color);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ffeb8d;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--background-light);
+        }
+        section:nth-of-type(odd) {
+            background-color: #eef4f9; /* Um cinza azulado suave */
+        }
+
+        h3 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background-color: var(--secondary-color);
+            left: 20%;
+            bottom: -10px;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item h4 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .ebook-image {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            transition: transform 0.5s ease;
+        }
+
+        .ebook-image:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--background-dark);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .cta-button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+            h3 {
+                font-size: 2em;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .hero h2 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .cta-button {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+            h3 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>TI do Zero: Seu Guia Essencial</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Descubra o Mundo da Tecnologia: Do Zero ao Seu Primeiro Passo na Carreira de TI!</h2>
+            <p>Se você sempre sonhou em entrar na área de Tecnologia da Informação, mas não sabe por onde começar, este ebook é o seu ponto de partida definitivo. Sem complicação, com exemplos práticos e um roteiro claro para o sucesso!</p>
+            <a href="<script type="text/javascript">
 	function importHotmart(){ 
  		var imported = document.createElement('script'); 
  		imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
@@ -12,72 +266,92 @@
 		document.head.appendChild(link);	} 
  	importHotmart(); 
  </script> 
- <a onclick="return false;" href="https://pay.hotmart.com/A105079563I?checkoutMode=2" class="hotmart-fb hotmart__button-checkout"><img src='https://static.hotmart.com/img/btn-buy-green.png'></a> 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TI do Zero ao Home Office</title>
-  <style>
-    body { margin:0; font-family: Arial; background:#f5f7fa; }
-    header { background:#0a2540; color:white; padding:60px 20px; text-align:center; }
-    header h1 { font-size:36px; margin-bottom:10px; }
-    header p { font-size:18px; opacity:0.9; }
-    .btn { background:#ffb703; color:#000; padding:15px 25px; text-decoration:none; border-radius:8px; font-weight:bold; }
-    .section { padding:40px 20px; max-width:900px; margin:auto; }
-    .card { background:white; padding:25px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-bottom:20px; }
-    h2 { color:#0a2540; }
-    ul { padding-left:20px; }
-    .highlight { color:#ffb703; font-weight:bold; }
-    footer { text-align:center; padding:30px; color:#777; }
-  </style>
-</head>
-<body>
+ <a onclick="return false;" href="https://pay.hotmart.com/A105079563I?checkoutMode=2" class="hotmart-fb hotmart__button-checkout"><img src='https://static.hotmart.com/img/btn-buy-green.png'></a> " class="cta-button">Quero Entrar na Área de TI Agora!</a>
+        </div>
+    </section>
 
-<header>
-  <h1>TI do Zero ao Home Office</h1>
-  <p>Saia do zero e conquiste seu primeiro emprego em tecnologia trabalhando de casa</p>
-  <br>
-  <a class="btn" href="#">🚀 Quero começar agora</a>
-</header>
+    <section class="section-image">
+        <div class="container">
+            <h3>Seu Guia Completo para Iniciar em TI</h3>
+            <img src="https://via.placeholder.com/300x400/009ffd/ffffff?text=Capa+do+Ebook" alt="Capa do Ebook TI do Zero" class="ebook-image">
+            <p>
+                Este ebook foi cuidadosamente elaborado para desmistificar a Tecnologia da Informação, apresentando os conceitos fundamentais de forma clara e acessível. Você terá um mapa para navegar pelas diversas áreas, entender as tendências e se preparar para as primeiras oportunidades.
+            </p>
+        </div>
+    </section>
 
-<div class="section">
-  <div class="card">
-    <h2>🔥 Você está cansado de...</h2>
-    <ul>
-      <li>Ganhar pouco?</li>
-      <li>Trabalhar muito e não evoluir?</li>
-      <li>Não saber por onde começar na TI?</li>
-    </ul>
-    <p>Se respondeu sim, esse guia foi feito para você.</p>
-  </div>
+    <section>
+        <div class="container">
+            <h3>O Que Você Vai Aprender e Conquistar:</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Desmistifique a TI</h4>
+                    <p>Entenda os termos técnicos e conceitos complexos de forma simples e descomplicada, sem jargões.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Explore as Áreas de Atuação</h4>
+                    <p>Conheça as principais carreiras em TI (Desenvolvimento, Redes, Dados, Segurança) e encontre seu caminho ideal.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Crie um Plano de Carreira</h4>
+                    <p>Desenvolva um roteiro prático para estudar, adquirir habilidades e buscar suas primeiras vagas.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Ferramentas Essenciais</h4>
+                    <p>Descubra as ferramentas e tecnologias mais importantes que todo iniciante deve conhecer.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Dicas para o Primeiro Emprego</h4>
+                    <p>Saiba como montar um currículo impactante e se preparar para entrevistas na área tech.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Mentalidade de Sucesso</h4>
+                    <p>Aprenda a desenvolver a resiliência e a paixão necessárias para prosperar no dinâmico mundo da TI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>📘 O que você vai aprender</h2>
-    <ul>
-      <li>Como entrar na TI do zero</li>
-      <li>As áreas mais fáceis para começar</li>
-      <li>Como criar experiência sem emprego</li>
-      <li>Plano de 30 dias para conseguir sua vaga</li>
-      <li>Como trabalhar em home office</li>
-    </ul>
-  </div>
+    <section>
+        <div class="container">
+            <h3>Para Quem é Este Ebook?</h3>
+            <p style="font-size: 1.1em; max-width: 800px; margin: 0 auto 30px;">
+                Este guia é perfeito para você que:
+            </p>
+            <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left;">
+                <li style="margin-bottom: 10px; font-size: 1.1em; position: relative; padding-left: 30px;">
+                    <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.5em; line-height: 1;">✓</span>
+                    Está cansado da sua carreira atual e busca uma transição para uma área promissora.
+                </li>
+                <li style="margin-bottom: 10px; font-size: 1.1em; position: relative; padding-left: 30px;">
+                    <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.5em; line-height: 1;">✓</span>
+                    É jovem e quer iniciar uma carreira em tecnologia, mas se sente perdido com a quantidade de informações.
+                </li>
+                <li style="margin-bottom: 10px; font-size: 1.1em; position: relative; padding-left: 30px;">
+                    <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.5em; line-height: 1;">✓</span>
+                    Já tentou aprender por conta própria, mas a falta de um roteiro te desanimou.
+                </li>
+                <li style="margin-bottom: 10px; font-size: 1.1em; position: relative; padding-left: 30px;">
+                    <span style="position: absolute; left: 0; color: var(--secondary-color); font-size: 1.5em; line-height: 1;">✓</span>
+                    Busca um material objetivo e prático para entender os fundamentos da TI.
+                </li>
+            </ul>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>💡 Para quem é</h2>
-    <p>Para iniciantes que querem mudar de vida e começar na tecnologia sem experiência.</p>
-  </div>
+    <section class="hero" style="padding: 60px 20px;">
+        <div class="container">
+            <h2>Não Perca Mais Tempo! Seu Futuro em TI Começa Agora!</h2>
+            <p>Clique no botão abaixo e garanta seu acesso ao conhecimento que vai transformar sua carreira. Invista em você e desvende as portas do universo da Tecnologia da Informação!</p>
+            <a href="#" class="cta-button">Comprar o Ebook Agora!</a>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>💰 Oferta especial</h2>
-    <p><span class="highlight">Acesso imediato</span> ao eBook completo.</p>
-    <p>Comece hoje mesmo sua jornada na tecnologia.</p>
-    <a class="btn" href="#">Comprar agora</a>
-  </div>
-</div>
-
-<footer>
-  <p>© 2026 - Todos os direitos reservados</p>
-</footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 TI do Zero. Todos os direitos reservados. | Desenvolvido com 💙</p>
+        </div>
+    </footer>
 
 </body>
 </html>
